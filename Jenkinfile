@@ -1,4 +1,11 @@
 node {
    stage("Checkout Source"){
-       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akilans/ms-node-app.git']]])
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/lohitj/Openshift-automate.git']]])
    }
+   stage("Inside"){
+        sh 'cd Openshift-automate'   
+   }
+   stage("Functional Testing"){
+        sh 'python Automate.py'   
+   }
+}
