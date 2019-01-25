@@ -5,7 +5,10 @@ node {
    stage("Inside"){
         sh 'cd Openshift-automate'   
    }
-   stage("Functional Testing"){
+   stage("Jenkins Way"){
+        sh 'python Automate.py'   
+   }
+   stage("Openshift Way"){
         sh 'python Automate.py'   
    }
 }
