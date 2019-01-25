@@ -9,6 +9,6 @@ node {
         sh 'python Automate.py'   
    }
    stage("Openshift Way"){
-        sh 'python Automate.py'   
+        sh 'python OpenshiftOC.py'   
    }
 }
